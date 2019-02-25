@@ -2,11 +2,13 @@ package esir.tp1;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class CreateActivity extends Activity {
@@ -22,6 +24,7 @@ public class CreateActivity extends Activity {
          **/
     }
 
+
     protected void createBook(View view) {
         Log.i(this.getLocalClassName(), "createBook method successfully called after createBookButton has been clicked on");
         Context context = getApplicationContext();
@@ -32,5 +35,10 @@ public class CreateActivity extends Activity {
         toast.setGravity(Gravity.BOTTOM, 0, 15);
 
         toast.show();
+        Intent data = new Intent(this, ListActivity.class);
+        EditText mEdit = findViewById(R.id.titleEditText);
+        data.putExtra("newBookCreatedTitle", mEdit.getText().toString());
+        this.setResult(Activity.RESULT_OK, data);
+        this.finish();
     }
 }
