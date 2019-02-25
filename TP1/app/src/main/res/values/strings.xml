@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">Android - TP1</string>
+
+    <!-- Main screen -->
+    <string name="main_create_button_label">Create new book</string>
+    <string name="main_list_button_label">List all books</string>
+
+    <!-- Create screen -->
+    <string name="create_release_date_label">Release date</string>
+    <string name="create_release_date_placeholder">2018</string>
+
+    <string name="create_title_label">Title</string>
+    <string name="create_title_placeholder">Fool Me Once</string>
+
+    <string name="create_author_label">Author</string>
+    <string name="create_author_placeholder">Harlan Coben</string>
+
+    <string name="create_button_label">Create</string>
+
+    <!-- List screen -->
+    <string name="list_create_button_label">Create a book</string>
 </resources>
