@@ -27,18 +27,15 @@ public class CreateActivity extends Activity {
 
     protected void createBook(View view) {
         Log.i(this.getLocalClassName(), "createBook method successfully called after createBookButton has been clicked on");
-        Context context = getApplicationContext();
-        CharSequence text = "Successfully created book!";
-        int duration = Toast.LENGTH_SHORT;
 
-        Toast toast = Toast.makeText(context, text, duration);
-        toast.setGravity(Gravity.BOTTOM, 0, 15);
+        Toast.makeText(this, "Successfully created book!", Toast.LENGTH_SHORT)
+                .setGravity(Gravity.BOTTOM, 0, 15)
+                .show();
 
-        toast.show();
-        Intent data = new Intent(this, ListActivity.class);
+        Intent data = new Intent();
         EditText mEdit = findViewById(R.id.titleEditText);
         data.putExtra("newBookCreatedTitle", mEdit.getText().toString());
-        this.setResult(Activity.RESULT_OK, data);
-        this.finish();
+        setResult(Activity.RESULT_OK, data);
+        finish();
     }
 }

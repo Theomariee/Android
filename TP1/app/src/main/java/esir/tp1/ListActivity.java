@@ -19,11 +19,11 @@ public class ListActivity extends Activity {
                                     Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         Log.d(this.getLocalClassName(),"requestCode : " + requestCode + " resultCode : " + resultCode);
-        Log.i(this.getLocalClassName(), data.getExtras().getString("newBookCreatedTitle"));
+        Log.i(this.getLocalClassName(), data.getStringExtra("newBookCreatedTitle"));
     }
 
     protected void redirectToCreateActivity(View view) {
-        Intent intent = new Intent(ListActivity.this, CreateActivity.class);
+        Intent intent = new Intent(this, CreateActivity.class);
         ListActivity.this.startActivityForResult(intent, 2);
     }
 
